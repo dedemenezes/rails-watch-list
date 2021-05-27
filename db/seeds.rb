@@ -1,5 +1,4 @@
 require 'open-uri'
-require 'json'
 
 puts 'Destroying all...'
 Movie.destroy_all
@@ -14,12 +13,12 @@ puts movies['results'].sample
 puts 'API accessed!'
 
 puts 'Running seed...'
-4.times do
-
+movies['results'].each do |movie_hash| 
   movie = Movie.create!(
-    title: movies['results'].sample['original_title'],
-    overview:  movies['results'].sample['overview'],
-    poster_url: "https://image.tmdb.org/t/p/w500#{movies['results'].sample['poster_path']}"
+    title: movie_hash['original_title'],
+    overview:  movie_hash['overview'],
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie_hash['poster_path']}",
+    rating: (6..9).to_a.sample
   )
 
   puts movie['poster_url']

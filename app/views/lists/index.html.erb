@@ -1,0 +1,66 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+  <%= image_tag 'logo.png', alt: "segura o filme" %>
+</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">My list</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">New list</a>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag 'profile.jpeg',class: "avatar dropdown-toggle", id: "navbarDropdown", alt: "segura o filme" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://br.web.img3.acsta.net/r_654_368/newsv7/19/01/17/20/18/3984219.jpg);">
+  <div class=" container text-center"">
+    <h1>Save<strong> movies</strong> to save <strong>time</strong>!</h1>
+    <p>Thriller</p>
+  </div>
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-end mt-5 mb-3">
+      <h2>My lists</h2>
+      <%= link_to  "Create a movie list", new_list_path, class: "btn btn-outline-success" %>
+    </div>
+  <div class="my-lists-create-new">
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-1 col-sm-3 col-md-4">
+      <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        list.name
+      </div>
+    </div>
+        <div class="col-sm-1 col-sm-3 col-md-4">
+      <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        list.name
+      </div>
+    </div>
+           <div class="col-sm-1 col-sm-3 col-md-4">
+      <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        list.name
+      </div>
+    </div>
+           <div class="col-sm-1 col-sm-3 col-md-4">
+      <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        list.name
+      </div>
+    </div>
+  
+  </div>
+
+</div>

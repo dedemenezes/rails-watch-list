@@ -4,6 +4,11 @@ class ListsController < ApplicationController
     @lists = List.all
   end
 
+  def show
+    @list = List.find(params[:id])
+    @bookmarks = Bookmark.where(list_id: @list.id)
+  end
+
   def create
     @list = List.new(list_param)
   end
@@ -20,9 +25,6 @@ class ListsController < ApplicationController
       render :new
     end
 
-    def show
-      @list = List.find(params[:id])
-    end
   end
 
   private

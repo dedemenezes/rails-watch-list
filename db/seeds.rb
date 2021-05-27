@@ -1,7 +1,7 @@
 require 'open-uri'
 
 puts 'Destroying all...'
-Movie.destroy_all
+Movie.destroy_all if Rails.env.development?
 puts 'destroyed!'
 
 puts 'Accessing API...'
@@ -25,4 +25,5 @@ movies['results'].each do |movie_hash|
 end
 
 puts "DB populated with #{Movie.count} movies"
+puts "zo/"
 

@@ -38,16 +38,17 @@
 
       <%= link_to  "Create a movie list", new_list_path, class: "btn btn-outline-success" %>
     </div>
-  <div class="my-lists-create-new">
-
-  </div>
 
   <div class="row">
-    <div class="col-sm-1 col-sm-3 col-md-4">
-      <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        list.name
+    <% @lists.each do |list| %>
+      <div class="col-sm-1 col-sm-3 col-md-4">
+        <%= link_to list_path(list) do %>
+          <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= list.name %>
+          </div>
+        <% end %>
       </div>
-    </div>
+    <% end %>
   
   </div>
 

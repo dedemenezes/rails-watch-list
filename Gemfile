@@ -33,6 +33,8 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 # Secure my api's keys
 gem 'dotenv-rails', groups: [:development, :test]
 
+# Coludinary - online storage system
+gem 'cloudinary', '~> 1.16.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

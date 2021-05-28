@@ -6,6 +6,7 @@
 <h1>Welcome to <%= @list.name %></h1>
 <%= link_to  "Add a bookmark", new_list_bookmark_path(@list) %>
 
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <div class="container">
   <div class="card-group">
     <% @bookmarks.each do |bookmark| %>

@@ -9,22 +9,12 @@ class ListsController < ApplicationController
     @bookmarks = Bookmark.where(list_id: @list.id)
   end
 
-  def create
-    @list = List.new(list_param)
-  end
-
   def new
     @list = List.new
   end
 
   def create
-    @list = List.new(list_params)
-    if @list.save
-      redirect_to list_path(@list)
-    else
-      render :new
-    end
-
+    @list = List.create(list_params)
   end
 
   private

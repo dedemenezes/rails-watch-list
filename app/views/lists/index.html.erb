@@ -13,23 +13,14 @@
 
       <%= link_to  "Create a movie list", new_list_path, remote: true, class: "btn btn-outline-success" %>
     </div>
-  <div class="row">
-    <% @lists.each do |list| %>
-      <div class="col-sm-1 col-sm-3 col-md-4">
-        <%= link_to list_path(list) do %>
-          <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-          <%= list.name %>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+  <div class="row" id="all-lists">
+    <%= render @lists %> <!-- if you render an PLURAL instance variable RAILS WILL UNDERSTAND THA T IT HAS instances of it and will do a loop by it self to render every partial with the SINGULAR name -->
   </div>
 </div>
 
 <div class="modal fade" id="listModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      PARTIAL
     </div>
   </div>
 </div>

@@ -11,9 +11,8 @@
     <div class="d-flex justify-content-between align-items-end mt-5 mb-3">
       <h2>My lists</h2>
 
-      <%= link_to  "Create a movie list", new_list_path, class: "btn btn-outline-success" %>
+      <%= link_to  "Create a movie list", new_list_path, remote: true, class: "btn btn-outline-success" %>
     </div>
-
   <div class="row">
     <% @lists.each do |list| %>
       <div class="col-sm-1 col-sm-3 col-md-4">
@@ -24,7 +23,13 @@
         <% end %>
       </div>
     <% end %>
-  
   </div>
+</div>
 
+<div class="modal fade" id="listModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      PARTIAL
+    </div>
+  </div>
 </div>

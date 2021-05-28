@@ -2,7 +2,7 @@
   $('#listModal .modal-content').html("<%= j render 'lists/modal', list: @list  %>")
 <% else %>
   $('#listModal').modal('hide')
-
+  $("#all-lists").prepend("<%= j render @list %>");
 <% end %>
  
-<!-- $("#all-lists").load(location.href + " #all-lists"); -->
+<!--  -->

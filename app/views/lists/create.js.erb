@@ -2,7 +2,7 @@
   $('#listModal .modal-content').html("<%= j render 'lists/modal', list: @list  %>")
 <% else %>
   $('#listModal').modal('hide')
-  $("#all-lists").prepend("<%= j render @list %>");
+  window.location.reload()
 <% end %>
  
 <!--  -->

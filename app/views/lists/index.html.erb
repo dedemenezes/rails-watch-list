@@ -14,7 +14,7 @@
       <%= link_to  "Create a movie list", new_list_path, remote: true, class: "btn btn-outline-success" %>
     </div>
   <div class="row" id="all-lists">
-    <%= render @lists %> <!-- if you render an PLURAL instance variable RAILS WILL UNDERSTAND THA T IT HAS instances of it and will do a loop by it self to render every partial with the SINGULAR name -->
+    <%= render 'list' %> <!-- if you render an PLURAL instance variable RAILS WILL UNDERSTAND THA T IT HAS instances of it and will do a loop by it self to render every partial with the SINGULAR name -->
   </div>
 </div>
 

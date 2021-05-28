@@ -1,8 +1,0 @@
-<% if @list.errors.any? %>
-  $('#listModal .modal-content').html("<%= j render 'lists/modal', list: @list  %>")
-<% else %>
-  $('#listModal').modal('hide')
-  window.location.reload()
-<% end %>
- 
-<!--  -->

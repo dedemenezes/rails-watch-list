@@ -41,11 +41,11 @@
     <% end %>
   </div>
 
-  <%= link_to  "Review my list!", new_list_review_path(@list) %>
+  <%= render 'reviews/new' %>
+
   <div class="review-box">
     <% @list.reviews.each do |review| %>
       <p><%= review.comment %></p>
-      <br>
       <p><%= review.rating %></p>
     <% end %>
     

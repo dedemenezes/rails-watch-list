@@ -15,7 +15,7 @@
   <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag 'https://pbs.twimg.com/profile_images/761156055153991680/Rfb_aZyw_400x400.jpg', alt: "segura o filme" %>
+        <%= image_tag 'https://res.cloudinary.com/seguraocode/image/upload/v1622298460/clapperboard_sck0yd.png', alt: "segura o filme" %>
       <% end %>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,27 @@
         </ul>
       </div>
     </div>    
+
     <%= yield %>
+
+    <div class="footer">
+      <div class="footer-links">
+        <%= link_to 'https://github.com/dedemenezes' do %>
+          <i class="fab fa-github"></i>
+        <% end %>
+        <%= link_to 'https://www.instagram.com/djdedemenezes_' do %>
+          <i class="fab fa-instagram"></i>
+        <% end %>
+        <%= link_to 'https://github.com/dedemenezes' do %>
+          <i class="fab fa-twitter"></i>
+        <% end %>
+        <%= link_to 'https://github.com/dedemenezes' do %>
+          <i class="fab fa-linkedin"></i>
+        <% end %>
+      </div>
+      <div class="footer-copyright">
+        First webapp made by <%= link_to  "Dede Menezes", 'https://github.com/dedemenezes'  %>  <i class="fas fa-heart"></i> at Le Wagon
+      </div>
+    </div>
   </body>
 </html>

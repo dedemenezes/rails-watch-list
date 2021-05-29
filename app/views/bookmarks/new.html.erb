@@ -1,7 +1,14 @@
-<h1>Add a bookmark</h1>
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.association :movie %>
-  <%= f.association :list %>
-  <%= f.input :comment %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <% if List.find(params[:list_id]).movies.empty? %>
+    <h1 class='my-3'>Add your <strong>first</strong> movie</h1>
+  <% else %>
+    <h1 class='my-3'>Choose a movie</h1>
+  <% end %>
+  
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.association :movie %>
+    <%= f.association :list %>
+    <%= f.input :comment %>
+    <%= f.submit %>
+  <% end %>
+</div>

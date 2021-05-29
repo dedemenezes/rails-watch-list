@@ -27,12 +27,15 @@
         </div>
       </div>
       <div class="card-trip-bottom">
-        <h4><%= bookmark.comment %></h4>
-        <p class="delete">
-          <%= link_to bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <h4>
+          <span>
+            <i class="fas fa-quote-left"></i>
+          </span>
+          <%= bookmark.comment %>
+        </h4>
+          <%= link_to bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } do %>
             delete
           <% end %>
-        </p>
       </div>
     </div>
   <% end %>

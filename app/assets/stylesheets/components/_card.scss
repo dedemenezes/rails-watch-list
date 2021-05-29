@@ -74,6 +74,14 @@
   padding: 0 16px;
 }
 
+.delete{
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $red;
+  }
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr ;

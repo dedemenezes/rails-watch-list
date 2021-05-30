@@ -1,0 +1,26 @@
+<div class="review-box">
+  <h4>Reviews</h4>
+  <% @list.reviews.each do |review| %>
+    <div class="review-each d-flex align-items-end">
+      <p>
+        <% star = '<i class="fas fa-star mr-1"></i>' %>
+        <%= star.html_safe * review.rating %>
+        <% 
+          @hour_ago = Time.now.hour + 3 - review.created_at.hour
+          @min_ago = Time.now.min - review.created_at.min
+          @sec_ago = Time.now.sec - review.created_at.sec
+        %>
+        <% if @hour_ago > 1 %>
+          <small><%= @hour_ago %> <em>hours ago</em></small>
+        <% elsif @min_ago > 5 %>
+          <small><%= @min_ago %> <em>minutes ago</em></small>
+        <% else %>
+          <small><em>less than a minute ago</em></small>
+        <% end %>
+      </p>
+    </div>
+    <p>
+      <%= review.comment %>
+    </p>
+  <% end %>
+</div>

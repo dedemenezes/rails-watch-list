@@ -40,17 +40,14 @@
       </div>
     <% end %>
   </div>
-
-  <div class="review-content d-flex justify-content-between">
-    <div class="review-box">
-      <h4>Reviews</h4>
-      <% @list.reviews.each do |review| %>
-        <p><%= review.rating %></p>
-        <p><%= review.comment %></p>
+  <% unless @list.bookmarks.empty? %>
+    <div class="review-content d-flex justify-content-between">
+      <% unless @list.reviews.empty? %>
+        <%= render 'reviews/review' %>
       <% end %>
+      <div class="new-review-box">
+        <%= render 'reviews/new' %>
+      </div>
     </div>
-    <div class="new-review-box">
-      <%= render 'reviews/new' %>
-    </div>
-  </div>
+  <% end %>
 </div>

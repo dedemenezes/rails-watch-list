@@ -1,6 +1,6 @@
 <%= simple_form_for [@list, @review] do |f| %>
 <h4>Add your review</h4>
-<%= f.input :comment, as: :text %>
-<%= f.input :rating %>
+<%= f.input :comment, as: :text, placeholder: 'Add your review here...' %>
+<%= f.input :rating, collection: 1..5 , selected: 5 %>
 <%= f.submit 'Review!', id: 'btn-review' %>
 <% end %>

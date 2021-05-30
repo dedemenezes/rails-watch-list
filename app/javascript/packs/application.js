@@ -26,8 +26,9 @@ import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call JS functions that needs to run when the page is loaded here.
-
   loadDynamicBannerText();
-  initSelect2();
+});
 
+document.addEventListener("turbolinks:load", function() {
+  initSelect2();
 });

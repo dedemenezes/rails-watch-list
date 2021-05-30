@@ -6,7 +6,7 @@
         <% star = '<i class="fas fa-star mr-1"></i>' %>
         <%= star.html_safe * review.rating %>
         <% 
-          @hour_ago = Time.now.hour + 3 - review.created_at.hour
+          @hour_ago = Time.now.hour - review.created_at.hour
           @min_ago = Time.now.min - review.created_at.min
           @sec_ago = Time.now.sec - review.created_at.sec
         %>

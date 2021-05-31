@@ -17,24 +17,6 @@
 
     <%= yield %>
 
-    <div class="footer">
-      <div class="footer-links">
-        <%= link_to 'https://github.com/dedemenezes' do %>
-          <i class="fab fa-github"></i>
-        <% end %>
-        <%= link_to 'https://www.instagram.com/djdedemenezes_' do %>
-          <i class="fab fa-instagram"></i>
-        <% end %>
-        <%= link_to 'https://twitter.com/dedemenezes_' do %>
-          <i class="fab fa-twitter"></i>
-        <% end %>
-        <%= link_to 'https://www.linkedin.com/in/andre-menezes-developer/' do %>
-          <i class="fab fa-linkedin"></i>
-        <% end %>
-      </div>
-      <div class="footer-copyright">
-        First webapp made by <%= link_to  "Dede Menezes", 'https://github.com/dedemenezes'  %>  <i class="fas fa-heart"></i> at Le Wagon
-      </div>
-    </div>
+    <%= render 'shared/footer' %>    
   </body>
 </html>

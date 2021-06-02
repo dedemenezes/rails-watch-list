@@ -16,7 +16,15 @@
 }
 
 .review-each {
+  p {
+    margin-bottom: 0.7rem;
+  }
+  margin-top: 22px;
+}
+
+.review-end {
   border-bottom: 1px solid rgba(156, 156, 156, 0.39);
+  padding-bottom: 12px;
   margin-bottom: 12px;
 }
 

@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 
+  include ActionView::Helpers::DateHelper
+
   def new
     @list = List.find(params[:list_id])
     @review = Review.new

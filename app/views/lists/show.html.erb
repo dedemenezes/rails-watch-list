@@ -33,21 +33,26 @@
             </span>
             <%= bookmark.comment %>
           </h4>
-            <%= link_to bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } do %>
-            delete
-            <% end %>
+          <% if user_signed_in? && current_user == @list.user %>
+            <%= link_to "Delete", bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>  
         </div>
       </div>
     <% end %>
   </div>
-  <% unless @list.bookmarks.empty? %>
-    <div class="review-content">
-      <% unless @list.reviews.empty? %>
-        <%= render 'reviews/review' %>
-      <% end %>
-      <div class="new-review-box">
-        <%= render 'reviews/new' %>
+    <% unless @list.bookmarks.empty? %>
+      <div class="review-content">
+        <% unless @list.reviews.empty? %>
+          <%= render 'reviews/review' %>
+        <% end %>
+  <% if user_signed_in? %>
+        <div class="new-review-box">
+          <%= render 'reviews/new' %>
+        </div>
       </div>
-    </div>
+  <% else %>
+    <%= render 'shared/join_us' %>
+    <% end %>
   <% end %>
+  
 </div>

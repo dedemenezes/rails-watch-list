@@ -1,8 +1,14 @@
 require 'open-uri'
 
-puts 'Destroying all...'
+puts 'Destroying everything...'
+List.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
 Movie.destroy_all if Rails.env.development?
-puts 'destroyed!'
+puts "Users.count #{User.count}" 
+puts "Lists.count #{List.count}" 
+puts "Movies.count #{Movie.count}" 
+puts "Reviews.count #{Review.count}" 
+puts 'Everythig was destroyed!'
 
 puts 'Accessing API...'
 
@@ -23,6 +29,18 @@ movies['results'].each do |movie_hash|
 
   puts movie['poster_url']
 end
+User.create!(
+  first_name: "Pedro",
+  last_name: "Cherques",
+  email: "teste@teste.com",
+  password: 123456,
+)
+User.create!(
+  first_name: "Belisa",
+  last_name: "Betega",
+  email: "teste@teste.com",
+  password: 123456,
+)
 
 puts "DB populated with #{Movie.count} movies"
 puts "zo/"

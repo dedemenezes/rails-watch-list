@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     @list = List.find(params[:list_id])
     @review = Review.new(review_params)
     @review.list = @list
+    @review.user = current_user
     if @review.save
       redirect_to list_path(@list)      
     end
@@ -20,6 +21,7 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :movie_id, :list, :user)
+    
   end
 end

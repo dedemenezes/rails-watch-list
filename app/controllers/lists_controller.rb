@@ -1,9 +1,11 @@
 class ListsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
+
+
 
   def index
-    @lists = List.all
+    @lists = policy_scope(List).order(created_at: :desc)
   end
 
   def show
@@ -18,6 +20,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    authorize @list
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save

@@ -9,7 +9,9 @@
 
 <div class="container">
   <div class="d-flex justify-content-end align-items-end my-3">
-    <%= link_to  "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-success" %>
+    <% if policy(@list).create? %>
+      <%= link_to  "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-success" %>
+    <% end %>
   </div>
   <div class="cards mb-4">
     <% @bookmarks.each do |bookmark| %>

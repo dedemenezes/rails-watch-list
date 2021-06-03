@@ -29,19 +29,31 @@ movies['results'].each do |movie_hash|
 
   puts movie['poster_url']
 end
-User.create!(
+
+user = User.new(
   first_name: "Pedro",
   last_name: "Cherques",
-  email: "teste@teste.com",
+  email: "pedro@teste.com",
   password: 123456,
 )
-User.create!(
+file = URI.open('http://res.cloudinary.com/seguraocode/image/upload/v1622698711/ws42osrevz2dulqlbkt7.jpg')
+user.profile_photo.attach(io: file, filename: "#{user.last_name}.png", content_type: 'image/png')
+
+user.save!
+
+user_2 = User.new(
   first_name: "Belisa",
   last_name: "Betega",
-  email: "teste@teste.com",
+  email: "belisa@teste.com",
   password: 123456,
+  profile_photo: "http://res.cloudinary.com/seguraocode/image/upload/v1622698718/t5roue1vctrmcabpvihj.jpg"
 )
 
-puts "DB populated with #{Movie.count} movies"
+file = URI.open('http://res.cloudinary.com/seguraocode/image/upload/v1622698718/t5roue1vctrmcabpvihj.jpg')
+user_2.profile_photo.attach(io: file, filename: "#{user_2.last_name}.png", content_type: 'image/png')
+
+user_2.save!
+
+puts "DB populated with #{Movie.count} movies and #{User.count} users"
 puts "zo/"
 

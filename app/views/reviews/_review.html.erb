@@ -1,14 +1,16 @@
 <div class="review-box">
   <h4>Reviews</h4>
   <% @list.reviews.each do |review| %>
-    <div class="review-each d-flex align-items-end">
+    <div class="review-each">
+    <h5><%= review %></h5>
         <p>
           <% star = '<i class="fas fa-star mr-1"></i>' %>
           <%= star.html_safe * review.rating %>
-            <small><%= distance_of_time_in_words(Time.now, review.created_at) %> <em>ago</em></small>
         </p>
+        <p><%= review.comment %></p>
     </div>
-    <p class="review-end"><%= review.comment %></p>
+                <small><%= distance_of_time_in_words(Time.now, review.created_at) %> <em>ago</em></small>
+    <p class="review-end"> - <span>Posted by <%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></span> </p>
 
   <% end %>
 </div>

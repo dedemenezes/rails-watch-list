@@ -9,3 +9,15 @@
       opacity: 1;
   };
 }
+
+.btn-primary {
+  background-color: $prussianblue;
+  border-color: $prussianblue;
+  opacity: 0.8;
+  transition: 0.7s ease;
+  &:hover {
+    opacity: 1;
+    background-color: $prussianblue;
+    border-color: $prussianblue;
+  }
+}

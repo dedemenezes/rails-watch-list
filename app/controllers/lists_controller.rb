@@ -2,10 +2,9 @@ class ListsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:index]
 
-
-
   def index
-    @lists = policy_scope(List).order(created_at: :desc)
+    @lists = List.all
+    # policy_scope(List).order(created_at: :desc)
   end
 
   def show
@@ -13,16 +12,18 @@ class ListsController < ApplicationController
     @bookmarks = Bookmark.where(list_id: @list.id)
     @review = Review.new
     @movies = Movie.all
+    authorize @list
   end
 
   def new
     @list = List.new
+    authorize @list
   end
 
   def create
-    authorize @list
     @list = List.new(list_params)
     @list.user = current_user
+    authorize @list
     if @list.save
       redirect_to lists_path
     else

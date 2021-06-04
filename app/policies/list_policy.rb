@@ -6,8 +6,17 @@ class ListPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    true
+  end
+
+
   def create?
-    return true
+    true
+  end
+
+  def show?
+    true
   end
   
 end

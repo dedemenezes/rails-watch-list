@@ -10,7 +10,14 @@
         <p><%= review.comment %></p>
     </div>
                 
-    <p class="review-end"> - <span>Posted by <%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %></span> <small><%= distance_of_time_in_words(Time.now, review.created_at) %> <em>ago</em></small></p>
+    <p class="review-end d-flex justify-content-between">
+      <span>Posted by <%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %> - <%= distance_of_time_in_words(Time.now, review.created_at) %> <em>ago</em></span>
+      <% if current_user == review.user %>
+        <%= link_to review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+      <% end %>
+    </p>
 
   <% end %>
 </div>

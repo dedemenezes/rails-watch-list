@@ -34,6 +34,20 @@
   }
 }
 
+.hidden-delete {
+  visibility: hidden;
+  &:hover {
+    visibility: visible;
+  }
+}
+
+.fa-trash {
+  color: $black;
+  &:hover {
+    color: $red;
+  }
+}
+
 @media(max-width: 992px) {
   .review-content {
     grid-template-columns: 1fr 1fr;

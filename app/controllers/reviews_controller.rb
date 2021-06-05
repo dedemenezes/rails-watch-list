@@ -5,12 +5,13 @@ class ReviewsController < ApplicationController
   def new
     @list = List.find(params[:list_id])
     @review = Review.new
-    
+    authorize @review
   end
 
   def create
     @list = List.find(params[:list_id])
     @review = Review.new(review_params)
+    authorize @review
     @review.list = @list
     @review.user = current_user
     if @review.save

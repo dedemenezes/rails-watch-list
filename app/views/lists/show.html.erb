@@ -4,13 +4,18 @@
     <p class="movies-count">
       <%= pluralize @list.movies.size, 'movie' %>
     </p>
+    <p class="made-by">
+      by: <%= @list.user.first_name %> <%= @list.user.last_name %>
+    </p>
   </div>
 </div>
 
 <div class="container">
   <div class="d-flex justify-content-end align-items-end my-3">
-    <% if policy(@list).create? %>
+    <% if @list.user == current_user %>
       <%= link_to  "Add a bookmark", new_list_bookmark_path(@list), class: "btn btn-outline-success" %>
+    <% else %>
+      <%= link_to  "Create a new list", new_list_path, class: "btn btn-outline-success" %>
     <% end %>
   </div>
   <div class="cards mb-4">

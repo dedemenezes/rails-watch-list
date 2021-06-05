@@ -1,8 +1,18 @@
 <div class="container">
-  <h1 class='my-3'>Create your list</h1>
-  <%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Create list", class: "btn btn-primary btn-block rounded-pill my-4" %>
-  <% end %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 offset-sm-3">
+      <div class="form-list">
+        <h2>Create your list</h2>
+        <%= simple_form_for @list do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :photo, as: :file %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Create list", class: "btn btn-primary btn-block rounded-pill my-4" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

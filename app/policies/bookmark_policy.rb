@@ -13,4 +13,8 @@ class BookmarkPolicy < ApplicationPolicy
     record.list.user == user
   end
 
+  def destroy?
+    record.list.user == user
+  end
+
 end

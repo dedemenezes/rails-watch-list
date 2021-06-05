@@ -2,12 +2,19 @@
   <% if List.find(params[:list_id]).movies.empty? %>
     <h1 class='my-3'>Add your <strong>first</strong> movie</h1>
   <% else %>
-    <h1 class='my-3'>Choose a movie</h1>
-  <% end %>
-  
-  <%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.association :movie, input_html: { class: 'select2' }  %>
-    <%= f.input :comment %>
-    <%= f.submit %>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 offset-sm-3">
+          <div class="form-list">
+            <h2>Choose a movie</h2>
+            <%= simple_form_for [@list, @bookmark] do |f| %>
+              <%= f.association :movie, input_html: { class: 'select2' }  %>
+              <%= f.input :comment %>
+              <%= f.submit "Add bookmark", class: "btn btn-primary btn-block rounded-pill my-4" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>    
   <% end %>
 </div>

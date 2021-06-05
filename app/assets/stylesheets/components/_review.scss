@@ -1,3 +1,28 @@
+.no-review {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  margin-bottom: 5vh;
+  h5 {
+    color: $orange;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 32px;
+  }
+  i {
+    font-size: 24px;
+  }
+  ul {
+    margin: 0;
+  }
+  li {
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 .review-content {
   margin-top: 25px;
   border-top: 1px solid black;

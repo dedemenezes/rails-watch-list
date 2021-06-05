@@ -2,7 +2,7 @@
   <div class="container text-center banner-box">
     <h1><%= @list.name %></h1>
     <p class="movies-count">
-      <%= @list.movies.count %> movies
+      <%= pluralize @list.movies.size, 'movie' %>
     </p>
   </div>
 </div>
@@ -42,19 +42,38 @@
       </div>
     <% end %>
   </div>
-    <% unless @list.bookmarks.empty? %>
+    <% if @list.bookmarks.empty? %>
+      <p>Go ahead and add your first bookmark!</p>
+    <% else %>
+        <% if @list.reviews.empty? && @list.user == current_user %>
+          <div class="no-review">
+            <div class="text-center">
+              <h5>Share with your friends</h5>
+              <ul class="list-inline class="list-inline-item"">
+                <li class="list-inline-item">
+                  <i class="fab fa-facebook-square"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fab fa-twitter-square"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="fab fa-whatsapp-square"></i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        <% else %>
       <div class="review-content">
-        <% unless @list.reviews.empty? %>
           <%= render 'reviews/review' %>
+          <% if user_signed_in? %>
+            <div class="new-review-box">
+              <%= render 'reviews/new' %>
+            </div>
+          <% else %>
+            <%= render 'shared/join_us' %>
+          <% end %>
         <% end %>
-  <% if user_signed_in? %>
-        <div class="new-review-box">
-          <%= render 'reviews/new' %>
-        </div>
       </div>
-  <% else %>
-    <%= render 'shared/join_us' %>
     <% end %>
-  <% end %>
-  
+
 </div>

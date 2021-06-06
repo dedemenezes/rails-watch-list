@@ -30,9 +30,12 @@ gem 'simple_form'
 # Pundit - User Authorization
 gem 'pundit'
 
-
 # Devise - User Authentication
 gem 'devise'
+
+# PG Search for powerful search thru one or associated models
+gem 'pg_search', '~> 2.3.0'
+
 
 # Faker gem
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

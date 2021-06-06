@@ -25,7 +25,11 @@ movies['results'].each do |movie_hash|
     overview:  movie_hash['overview'],
     poster_url: "https://image.tmdb.org/t/p/w500#{movie_hash['backdrop_path']}",
     big_poster: "https://image.tmdb.org/t/p/w500#{movie_hash['poster_path']}",
-    rating: movie_hash['vote_average']
+    rating: movie_hash['vote_average'],
+    # production_companies: movie_hash['production_companies'].map { |company| company[:id] }.min,
+    original_language: movie_hash['original_language'],
+    release_date: movie_hash['release_date'],
+    tmdb_id: movie_hash['id']
   )
 
   puts movie['poster_url']

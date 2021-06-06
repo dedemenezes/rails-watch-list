@@ -36,6 +36,8 @@ gem 'devise'
 # PG Search for powerful search thru one or associated models
 gem 'pg_search', '~> 2.3.0'
 
+# RENDERING FORM WITH ERRORS
+gem 'turbolinks_render'
 
 # Faker gem
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

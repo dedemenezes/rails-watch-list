@@ -1,0 +1,25 @@
+<div class="card-trip">
+        <%= image_tag bookmark.movie.poster_url %>
+        <div class="card-trip-infos">
+          <div>
+            <h2>
+              <%= bookmark.movie.title %>  <i class="fas fa-star"></i>
+                <span>
+                <%= bookmark.movie.rating %>
+                </span>
+            </h2>
+            <p><%= bookmark.movie.overview %></p>
+          </div>
+        </div>
+        <div class="card-trip-bottom">
+          <h4>
+            <span>
+              <i class="fas fa-quote-left"></i>
+            </span>
+            <%= bookmark.comment %>
+          </h4>
+          <% if user_signed_in? && current_user == @list.user %>
+            <%= link_to "Delete", bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>  
+        </div>
+      </div>

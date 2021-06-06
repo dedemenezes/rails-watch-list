@@ -19,66 +19,24 @@
     <% end %>
   </div>
   <div class="cards mb-4">
-    <% @bookmarks.each do |bookmark| %>
-      <div class="card-trip">
-        <%= image_tag bookmark.movie.poster_url %>
-        <div class="card-trip-infos">
-          <div>
-            <h2>
-              <%= bookmark.movie.title %>  <i class="fas fa-star"></i>
-                <span>
-                <%= bookmark.movie.rating %>
-                </span>
-            </h2>
-            <p><%= bookmark.movie.overview %></p>
-          </div>
-        </div>
-        <div class="card-trip-bottom">
-          <h4>
-            <span>
-              <i class="fas fa-quote-left"></i>
-            </span>
-            <%= bookmark.comment %>
-          </h4>
-          <% if user_signed_in? && current_user == @list.user %>
-            <%= link_to "Delete", bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>  
-        </div>
-      </div>
-    <% end %>
+    <%= render @bookmarks %>
   </div>
-    <% if @list.bookmarks.empty? %>
-      <p>Go ahead and add your first bookmark!</p>
+  <% if @list.bookmarks.empty? %>
+    <p>Go ahead and add your first bookmark!</p>
+  <% else %>
+    <% if @list.reviews.empty? && @list.user == current_user %>
+      <%= render "reviews/no_review" %>
     <% else %>
-        <% if @list.reviews.empty? && @list.user == current_user %>
-          <div class="no-review">
-            <div class="text-center">
-              <h5>Share with your friends</h5>
-              <ul class="list-inline class="list-inline-item"">
-                <li class="list-inline-item">
-                  <i class="fab fa-facebook-square"></i>
-                </li>
-                <li class="list-inline-item">
-                  <i class="fab fa-twitter-square"></i>
-                </li>
-                <li class="list-inline-item">
-                  <i class="fab fa-whatsapp-square"></i>
-                </li>
-              </ul>
-            </div>
+      <div class="review-content">
+        <%= render 'reviews/review' %>
+        <% if user_signed_in? %>
+          <div class="new-review-box">
+            <%= render 'reviews/new' %>
           </div>
         <% else %>
-      <div class="review-content">
-          <%= render 'reviews/review' %>
-          <% if user_signed_in? %>
-            <div class="new-review-box">
-              <%= render 'reviews/new' %>
-            </div>
-          <% else %>
-            <%= render 'shared/join_us' %>
-          <% end %>
+          <%= render 'shared/join_us' %>
         <% end %>
       </div>
     <% end %>
-
+  <% end %>
 </div>

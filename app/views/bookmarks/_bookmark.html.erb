@@ -19,7 +19,7 @@
             <%= bookmark.comment %>
           </h4>
           <% if user_signed_in? && current_user == @list.user %>
-            <%= link_to "Delete", bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "Delete", bookmark_path(bookmark), class: "delete", method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
           <% end %>  
         </div>
       </div>

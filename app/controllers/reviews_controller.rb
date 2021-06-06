@@ -10,12 +10,15 @@ class ReviewsController < ApplicationController
 
   def create
     @list = List.find(params[:list_id])
+    @bookmarks = Bookmark.all
     @review = Review.new(review_params)
     authorize @review
     @review.list = @list
     @review.user = current_user
     if @review.save
-      redirect_to list_path(@list)      
+      redirect_to list_path(@list, anchor: "review-#{@review.id}")
+    else
+      render 'lists/show'
     end
   end
 
@@ -24,7 +27,7 @@ class ReviewsController < ApplicationController
     authorize @review
     @review.destroy
 
-    redirect_to list_path(@review.list)
+    redirect_to list_path(@review.list, anchor: "review-#{@review.id - 1}")
   end
 
   private

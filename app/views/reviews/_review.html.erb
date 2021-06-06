@@ -1,7 +1,7 @@
 <div class="review-box">
   <h4>Reviews</h4>
   <% @list.reviews.each do |review| %>
-    <div class="review-each">
+    <div class="review-each" id="review-<%= review.id %>">
     <h5><%= review.movie.title %></h5>
         <p>
           <% star = '<i class="fas fa-star mr-1"></i>' %>
@@ -13,7 +13,7 @@
     <p class="review-end d-flex justify-content-between">
       <span>Posted by <%= review.user.first_name.capitalize %> <%= review.user.last_name.capitalize %> - <%= distance_of_time_in_words(Time.now, review.created_at) %> <em>ago</em></span>
       <% if current_user == review.user %>
-        <%= link_to review_path(review), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to review_path(review), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do %>
           <i class="fas fa-trash"></i>
         <% end %>
       <% end %>

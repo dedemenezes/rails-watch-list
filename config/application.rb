@@ -31,5 +31,9 @@ module RailsWatchList
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Javascript works even if it is disable on client
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
+

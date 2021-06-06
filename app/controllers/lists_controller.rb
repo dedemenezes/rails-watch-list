@@ -4,6 +4,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @movies = Movie.all
     # policy_scope(List).order(created_at: :desc)
   end
 

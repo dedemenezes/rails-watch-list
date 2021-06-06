@@ -1,4 +1,4 @@
-<%= simple_form_for [@list, @review] do |f| %>
+<%= simple_form_for [@list, @review], remore: true do |f| %>
 <h4>Add your review</h4>
 <%= f.association :movie, collection: @list.movies, selected: 1 %>
 <%= f.input :comment, as: :text, placeholder: 'Add your review here...' %>

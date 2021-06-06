@@ -5,7 +5,7 @@
         <div class="form-list">
           <h2>Choose a movie</h2>
           <%= simple_form_for [@list, @bookmark] do |f| %>
-            <%= f.association :movie, input_html: { class: 'select2' }  %>
+            <%= f.association :movie, input_html: { class: 'select2' } %>
             <%= f.input :comment %>
             <%= f.submit "Add bookmark", class: "btn btn-primary btn-block rounded-pill my-4" %>
           <% end %>

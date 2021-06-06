@@ -3,7 +3,10 @@
         <div class="card-trip-infos">
           <div>
             <h2>
-              <%= bookmark.movie.title %>  <i class="fas fa-star"></i>
+              <%= link_to movie_movies_path(bookmark.movie) do %>
+                <%= bookmark.movie.title %>
+              <% end %>
+                <i class="fas fa-star"></i>
                 <span>
                 <%= bookmark.movie.rating %>
                 </span>

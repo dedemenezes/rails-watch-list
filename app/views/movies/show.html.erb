@@ -4,8 +4,31 @@
       <div class="content d-flex">
         <%= image_tag @movie.big_poster, class: 'background-card' %>
         <div class="background-card">
-          <h1><%= @movie.title %></h1>
+          <%= link_to "https://www.themoviedb.org/movie/#{@movie.tmdb_id}", target: 'blank' do %>
+            <h1><%= @movie.title %></h1>
+          <% end %>
           <p><%= @movie.overview %></p>
+          <table>
+            <tr>
+              <th>Release Date</th>
+              <th>Vote Average</th>
+              <th>Original Language</th>
+            </tr>
+            <tr>
+            <td><%= @movie.release_date %></td>
+            <td><%= @movie.rating %></td>
+            <td><%= @movie.original_language %></td>
+            </tr>
+          </table>
+          <h3>Where to watch</h3>
+          <%= link_to "#{@movie.title}", "https://www.justwatch.com/us/search?q=#{@movie.title}", target: 'blank' %>
+          <div class="user-lists">
+          link above is broken
+            <h5><%= "#{current_user.first_name}" %> has <%= pluralize @lists.where(user: current_user).size, "list" %></h5>
+            <% @lists.each do |list| %>
+              <%= link_to  "Add to #{list.name}", list_bookmarks_path(list.id), method: :post %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

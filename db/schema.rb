@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_06_161613) do
+ActiveRecord::Schema.define(version: 2021_06_06_171934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2021_06_06_161613) do
     t.bigint "list_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "comment"
+    t.string "comment", default: ""
     t.index ["list_id"], name: "index_bookmarks_on_list_id"
     t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
   end
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_06_06_161613) do
     t.integer "runtime"
     t.string "imdb_id"
     t.integer "tmdb_id"
+    t.string "original_title"
   end
 
   create_table "reviews", force: :cascade do |t|

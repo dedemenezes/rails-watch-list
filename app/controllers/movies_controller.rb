@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   
   def index
+    @list = List.new
     if params[:query].present?
       @movies = Movie.search_by_title_and_overview(params[:query])
     else

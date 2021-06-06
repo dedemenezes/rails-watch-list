@@ -18,6 +18,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to list_path(@list, anchor: "review-#{@review.id}")
     else
+      flash[:alert] = "Something went wrong."
       render 'lists/show'
     end
   end

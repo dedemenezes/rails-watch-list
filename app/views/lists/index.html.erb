@@ -4,6 +4,9 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
+    <% unless user_signed_in? %>
+      <%= link_to  "Join Us", new_user_registration_path, class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
 
@@ -11,7 +14,7 @@
     <div class="d-flex justify-content-between align-items-center my-3">
       <%= render "shared/filter_movies" %>
 
-      <%= link_to  "Create a new list", new_list_path, class: "btn btn-outline-success" %>
+      <%= link_to  "Create a new list", new_list_path, class: "btn btn-primary" %>
     </div>
   <div class="row" id="all-lists">
     <%= render @lists %> <!-- if you render an PLURAL instance variable RAILS WILL UNDERSTAND THA T IT HAS instances of it and will do a loop by it self to render every partial with the SINGULAR name -->

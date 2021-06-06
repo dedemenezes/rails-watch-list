@@ -8,7 +8,11 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new( bookmark_params )
-    @list = List.find(params[:list_id])
+    if params[:bookmark][:list]
+      @list = List.find(params[:bookmark][:list]) 
+    else
+      @list = List.find(params[:list_id]) if params[:list_id]
+    end
     @movie = Movie.find(params[:bookmark][:movie_id])
     @bookmark.movie = @movie
     @bookmark.list = @list

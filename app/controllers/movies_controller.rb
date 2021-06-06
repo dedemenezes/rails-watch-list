@@ -14,8 +14,9 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find(params[:id])
     @bookmark = Bookmark.new
-    @lists = List.where(user: current_user)
+    @lists = List.all
     authorize @movie
+    authorize @bookmark
   end
 
 end

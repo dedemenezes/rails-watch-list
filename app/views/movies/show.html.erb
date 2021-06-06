@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <div class="content d-flex my-3">
         <%= image_tag @movie.big_poster, class: 'background-card' %>
-        <div class="background-card">
+        <div class="background-card mx-2">
           <%= link_to "https://www.themoviedb.org/movie/#{@movie.tmdb_id}", target: 'blank' do %>
             <h1><%= @movie.title %></h1>
           <% end %>
@@ -24,7 +24,20 @@
                 <td><%= @movie.rating %></td>
               </tr>
             </tbody>
-          </table>        
+          </table>
+          <div class="show-form">
+            <div class="add-bookmark" style="display:none" id="target-bookmark">
+              <%= simple_form_for [@lists[0], @bookmark], remote: true do |f| %>
+                <%= f.input :list, collection: List.where(user: current_user) %>
+                <%= f.association :movie, select: Movie.find(params[:id]) %>
+                <%= f.input :comment %>
+                <%= f.submit "Add bookmark", class: "btn btn-primary btn-block rounded-pill my-4" %>
+              <% end %>
+            </div>
+            <div class="show-bookmark">
+              <input type="button" name="show-bookmark" id="show-bookmark" value="Create a bookmark">
+            </div>
+          </div>   
         </div>
       </div>
     </div>

@@ -23,6 +23,12 @@ window.$ = $;
 
 import { loadDynamicBannerText } from '../components/banner';
 import { initSelect2 } from '../components/init_select2';
+import { showForm } from '../components/show_form';
+
+document.addEventListener('turbolinks:load', () => {
+  // Call JS functions that needs to run when the page is loaded here.
+  showForm();
+});
 
 document.addEventListener('turbolinks:load', () => {
   // Call JS functions that needs to run when the page is loaded here.

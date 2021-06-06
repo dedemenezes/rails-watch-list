@@ -10,6 +10,12 @@ class MoviesController < ApplicationController
       @movies = Movie.all
     end
   end
+
+  def show
+    @movie = Movie.find(params[:id])
+    authorize @movie
+  end
+
 end
 
 # Search join table

@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   resources :bookmarks, only: [:destroy]
   resources :reviews, only: [:destroy]
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index] do
+    collection do
+      get "/:id", to: "movies#show", as: :movie
+    end
+  end
 
 end

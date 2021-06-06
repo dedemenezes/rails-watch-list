@@ -1,2 +1,13 @@
-<%= @movie.title %>
-<%= image_tag @movie.poster_url %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="content d-flex">
+        <%= image_tag @movie.big_poster, class: 'background-card' %>
+        <div class="background-card">
+          <h1><%= @movie.title %></h1>
+          <p><%= @movie.overview %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

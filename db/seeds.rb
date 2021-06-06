@@ -24,6 +24,7 @@ movies['results'].each do |movie_hash|
     title: movie_hash['original_title'],
     overview:  movie_hash['overview'],
     poster_url: "https://image.tmdb.org/t/p/w500#{movie_hash['backdrop_path']}",
+    big_poster: "https://image.tmdb.org/t/p/w500#{movie_hash['poster_path']}",
     rating: movie_hash['vote_average']
   )
 

@@ -14,7 +14,7 @@ class BookmarksController < ApplicationController
     @bookmark.list = @list
     authorize @bookmark
     if @bookmark.save
-      redirect_to list_path(@list)
+      redirect_to list_path(@list, anchor: "bookmark-#{@bookmark.id}")
     else
       render :new
     end
@@ -25,7 +25,7 @@ class BookmarksController < ApplicationController
     authorize @bookmark
     @bookmark.destroy
 
-    redirect_to list_path(@bookmark.list)
+    redirect_to list_path(@bookmark.list, anchor: "bookmarks")
   end
 
   private

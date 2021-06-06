@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="content d-flex">
+      <div class="content d-flex my-3">
         <%= image_tag @movie.big_poster, class: 'background-card' %>
         <div class="background-card">
           <%= link_to "https://www.themoviedb.org/movie/#{@movie.tmdb_id}", target: 'blank' do %>
@@ -20,8 +20,8 @@
             <tbody>
               <tr>
                 <td><%= @movie.release_date %></td>
-                <td><%= @movie.rating %></td>
                 <td><%= @movie.original_language %></td>
+                <td><%= @movie.rating %></td>
               </tr>
             </tbody>
           </table>        

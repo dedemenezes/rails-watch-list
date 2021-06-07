@@ -26,9 +26,11 @@ import { initSelect2 } from '../components/init_select2';
 import { showForm } from '../components/show_form';
 
 import { initStarRating } from '../plugins/init_star_rating';
+import { init_aos } from '../plugins/init_aos'
 
 document.addEventListener('turbolinks:load', () => {
   initStarRating();
+  init_aos();
   showForm();
 });
 
@@ -38,4 +40,12 @@ document.addEventListener('turbolinks:load', () => {
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
+});
+
+document.addEventListener('aos:in', ({ detail }) => {
+  console.log('animated in', detail);
+});
+
+document.addEventListener('aos:out', ({ detail }) => {
+  console.log('animated out', detail);
 });

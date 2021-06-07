@@ -4,7 +4,9 @@
       <%= render "shared/filter_movies" %>
       <div id="movies">
         <% @movies.each do |movie| %>
-          <div class="card-product mb-3">
+          <div class="card-product mb-3"
+            data-aos="flip-up"
+          >
             <%= image_tag movie.poster_url %>
             <div class="card-product-infos">
               <h2><%= movie.title %></h2>

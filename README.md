@@ -1,24 +1,39 @@
-# README
+# Watch List - Save movies to save time
+Link:  [Watch List](https://save-movies-save-time.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General Info](#general-info)
+* [Features](#features)
+* [Technologies](#technologies)
+* [Status](#status)
 
-Things you may want to cover:
+## General Info
+First web app developed all by myself during 5 days at Le Wagon Bootcamp.
+The idea is to users create lists and bookmarks movies to watch later. Users can interact commenting lists.
 
-* Ruby version
+## Features
+* Create lists
+* Add movies to list
+* Search movies
+* Star rating list
+* Comment specific movie on list
+* DB seeded by an API call
+* Sign in / Sign up
 
-* System dependencies
+## Technologies
+* Ruby 2.6.6
+* Rails 6.1.4
+* PostgreSQL 12
+* Javascript ES6
+* Heroku
 
-* Configuration
+## Status
+Developed during 5 days at Le Wagon 🏃‍♀️ one I'll add something to it. If you liked the idea feel free to [![Waffle.io](https://img.shields.io/badge/contact-EA4335?logo=gmail&logoColor=white)][4] [![Waffle.io](https://img.shields.io/badge/me-0A66C2?logo=linkedin&color=blue)][1] ! 😃
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-* Services (job queues, cache servers, search engines, etc.)
+[1]: http://www.linkedin.com/in/andre-menezes-developer
+[4]: mailto:dev.andremenezes@gmail.com
 
-* Deployment instructions
-
-* ...

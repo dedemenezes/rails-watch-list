@@ -28,7 +28,7 @@ The idea is to users create lists and bookmarks movies to watch later. Users can
 * Heroku
 
 ## Status
-Developed during 5 days at Le Wagon 🏃‍♀️ one I'll add something to it. If you liked the idea feel free to [![Waffle.io](https://img.shields.io/badge/contact-EA4335?logo=gmail&logoColor=white)][4] [![Waffle.io](https://img.shields.io/badge/me-0A66C2?logo=linkedin&color=blue)][1] ! 😃
+Developed during 5 days at Le Wagon 🏃‍♀️ one I'll add something to it. If you liked the idea feel free to [![Waffle.io](https://img.shields.io/badge/contact-EA4335?logo=gmail&logoColor=white)][4] [![Waffle.io](https://img.shields.io/badge/me-0A66C2?logo=linkedin&color=blue)][1] 😃
 
 
 
